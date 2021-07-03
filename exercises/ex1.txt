@@ -1,0 +1,663 @@
+    1  reboot
+    2  uname -r
+    3  fdisk -l
+    4  free -m
+    5  yum update
+    6  rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+    7  cd /software
+    8  mkdir /software
+    9  cd /software/
+   10  ls
+   11  ls -la
+   12  dnf update
+   13  dnf install https://www.elrepo.org/elrepo-release-8.0-2.el8.elrepo.noarch.rpm
+   14  dnf repolist
+   15  uname -r
+   16  dnf --enablerepo=elrepo-kernel install kernel-ml
+   17  reboot
+   18  uname -r
+   19  reboot
+   20  yum install perl gcc kernel-devel elfutils-libelf-devel -y
+   21  yum install  gcc kernel-devel elfutils-libelf-devel -y
+   22  reboot
+   23  cd /etc/sysconfig/network-scripts/
+   24  ls
+   25  vim ifcfg-enp2s0f1 
+   26  uname -a
+   27  uname -r
+   28  awk -F
+   29  awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg
+   30  wget https://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo
+   31  ls
+   32  mv virtualbox.repo /etc/yum.repos.d/
+   33  cd /etc/yum.repos.d/
+   34  ls
+   35  dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+   36  dnf -y install binutils kernel-devel kernel-headers libgomp make patch gcc glibc-headers glibc-devel dkms
+   37  dnf install -y VirtualBox-6.1
+   38  /sbin/vboxconfig
+   39  yum install dmesg
+   40  dkms status
+   41  systemctl status vboxdrv.service 
+   42  systemctl start vboxdrv.service 
+   43  journalctl -xe
+   44  sestatus
+   45  vim /etc/selinux/config 
+   46  setenforce 0
+   47  systemctl start vboxdrv.service 
+   48  systemctl status vboxdrv.service 
+   49  reboot
+   50  uname -r
+   51  systemctl restart vboxdrv.service 
+   52  systemctl status vboxdrv.service 
+   53  yum install -y yum-utils
+   54  yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+   55  ls
+   56  pwd
+   57  yum -y install vagrant
+   58  vagrant -v
+   59  vagrant box add ubuntu/trusty64 --provider=virtualbox
+   60  mkdir /vagrant_ws
+   61  cd /vagrant_ws/
+   62  vagrant init ubuntu/trusty64
+   63  ls
+   64  cat Vagrantfile 
+   65  vagrant up
+   66  vagrant ssh
+   67  vagrant stop
+   68  cd /software/
+   69  ls
+   70  yum install -y  libffi-devel  zlib-devel  bzip2-devel  openssl-devel  ncurses-devel  sqlite-devel  readline-devel  tk-devel  gdbm-devel  xz-devel  expat-devel
+   71  yum groupinstall -y "development tools"
+   72  wget https://www.python.org/ftp/python/3.9.5/Python-3.9.5.tgz
+   73  tar -xf Python-3.9.5.tgz 
+   74  ls
+   75  cd Python-3.9.5/
+   76  ls
+   77  ./configure --enable-optimizations
+   78   make altinstall
+   79  python3 --version
+   80  python3
+   81  virtualbox
+   82  yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
+   83  ls
+   84  yum install docker-ce docker-ce-cli containerd.io
+   85  docker --version
+   86  docker run -p 80:80 nginx
+   87  docker run -p 80:80 --image nginx
+   88  docker run -p 80:80  nginx
+   89  systemctl restart docker.service 
+   90  systemctl enable docker.service 
+   91  docker run -p 80:80  nginx
+   92  docker run hello-world
+   93  python3
+   94  python3.9.5
+   95  python3 --version
+   96  exec bash
+   97  python3 --version
+   98  cd /software/
+   99  ls
+  100  cd Python-3.9.5/
+  101  ls
+  102  pip3.9 install --upgrade pip
+  103  pip
+  104  pip3
+  105  pip --version
+  106  pip3 --version
+  107  cd /usr/local/lib/python3.9/
+  108  ls
+  109  python3
+  110  cd /usr/lib/java/
+  111  ls
+  112  cd ..
+  113  cd jvm
+  114  ls
+  115  cd java-1.8.0-openjdk
+  116  ls
+  117  cd bin/
+  118  ls
+  119  mvn --version
+  120  cd /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el8_4.x86_64
+  121  ls
+  122  cd bin/
+  123  ls
+  124  cd /usr/local/bin/
+  125  ls
+  126  cd python3.9
+  127  ./python3.9
+  128  echo $PATH
+  129  yum install -y java-1.8.0-openjdk-devel
+  130  java --version
+  131  java -version
+  132  dhclient -v
+  133  ping 8.8.8.8
+  134  systemctl status vboxdrv.service 
+  135  systemctl status docker.service 
+  136  python3
+  137  cd /opt/
+  138  ls
+  139  wget https://apachemirror.wuchna.com/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz
+  140  tar xzf apache-maven-3.8.1-bin.tar.gz 
+  141  ls
+  142  mv apache-maven-3.8.1-bin.tar.gz /software/
+  143  ls
+  144  ln -s apache-maven-3.8.1/
+  145  ln -s apache-maven-3.8.1 maven
+  146  vi /etc/profile.d/maven.sh
+  147  source /etc/profile.d/maven.sh
+  148  mvn cd
+  149  cd
+  150  mvn --version
+  151  wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+  152  ls
+  153  rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+  154    yum install jenkins
+  155  systemctl restart jenkins
+  156  systemctl status jenkins
+  157  vim /var/lib/jenkins/secrets/initialAdminPassword
+  158  gedit /var/lib/jenkins/secrets/initialAdminPassword
+  159  mvn --version
+  160  cd /opt/maven/
+  161  ls
+  162  cd bin/
+  163  ls
+  164  mvn --version
+  165  /usr/bin/python3 /root/Desktop/Python_WS/test.py
+  166  /usr/bin/python3 /root/Desktop/Python_WS/test.py
+  167   /usr/bin/env /usr/bin/python3 /root/.vscode/extensions/ms-python.python-2021.6.944021595/pythonFiles/lib/python/debugpy/launcher 45407 -- /root/Desktop/Python_WS/test.py 
+  168  systemctl restart Networkmanager
+  169  systemctl restart NetworkManager
+  170  ping 8.8.8.8
+  171  systemctl restart NetworkManager
+  172  cd /tmp/
+  173  ls
+  174  cd mozilla_root0/
+  175  ls
+  176  cd AnypointStudio-7.9.0-linux64.tar-1/
+  177  ls
+  178  cd AnypointStudio/
+  179  ls
+  180  ./AnypointStudio 
+  181  cd /tmp/mozilla_root0/
+  182  ls
+  183  cd AnypointStudio-7.9.0-linux64.tar-1/
+  184  ls
+  185  mv AnypointStudio/ /root/
+  186  mkdir /root/mule
+  187  mv AnypointStudio/ /root/mule/
+  188  ls
+  189  cd /root/mule/
+  190  ls
+  191  cd AnypointStudio/
+  192  ls
+  193  pwd
+  194  cd ../../
+  195  ls
+  196  cd AnypointStudio/
+  197  ls
+  198  cd ..
+  199  cd mule/
+  200  ls
+  201  cd AnypointStudio/
+  202  ls
+  203  pwd;
+  204  echo $PATH
+  205  export $PATH:/root/mule/AnypointStudio
+  206  echo $PATH
+  207  LS
+  208  ls
+  209  ./AnypointStudio 
+  210  ls
+  211  cat studio_crash_report.log 
+  212  vim studio_crash_report.log 
+  213  cd /etc/sysconfig/network-scripts/
+  214  ls
+  215  cat ifcfg-enp2s0f1 
+  216  YUM UPDATE
+  217  yum update
+  218  yum updqate
+  219  yum update
+  220  cd /software/\
+  221  cd /software/
+  222  ls
+  223  wget https://www.kernel.org/pub/linux/kernel/projects/backports/2015/11/20/backports-20151120.tar.gz
+  224  ls
+  225  tar -xvzf backports-20151120.tar.gz 
+  226  ls
+  227  cd backports-20151120/
+  228  ls
+  229  make defconfig-ath10k
+  230  make
+  231  make install
+  232  reboot
+  233  ls
+  234  cd drivers/
+  235  ls
+  236  ls | grep Network
+  237  ls | grep Ne
+  238  ls | grep wi
+  239  cd /root/
+  240  ls
+  241  cd /software/
+  242  ls
+  243  git clone https://github.com/ajaybhatia/Qualcomm-Atheros-QCA9377-Wifi-Linux.git
+  244  ls
+  245  cd Qualcomm-Atheros-QCA9377-Wifi-Linux/
+  246  ls
+  247  uname -r
+  248  reboot
+  249  cd /software/
+  250  ls
+  251  cd backports-20151120/
+  252  ls
+  253  make defconfig-wifi
+  254  cd /tmp/mozilla_root0/
+  255  ls
+  256  dmesg | grep ath10k
+  257  nmcli
+  258  fdisk -l
+  259  systemctl restart NetworkManager
+  260  systemctl status NetworkManager
+  261  systemctl start NetworkManager-
+  262  systemctl start NetworkManager
+  263  ping 8.8.8.8
+  264  reboot
+  265  echo $PATH
+  266  cd /etc/sysconfig/network-scripts/
+  267  ls
+  268  vim ifcfg-enp2s0f1 
+  269  cd
+  270  uname -a
+  271  reboot
+  272  lspci -v
+  273  cd /root/mule/
+  274  cd AnypointStudio/
+  275  ;s
+  276  ls
+  277  ./AnypointStudio 
+  278  uname -a
+  279  lscpi -v
+  280  lspci -v
+  281  cd /software/\
+  282  rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+  283  yum install https://www.elrepo.org/elrepo-release-8.0-2.el8.elrepo.noarch.rpm
+  284  yum install kmod-r8822be
+  285  yum update
+  286  yum install kmod-r8822be
+  287  yum update
+  288  yum clean all
+  289  yum update
+  290  yum install kmod-r8822be
+  291  yum install kmod
+  292  yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+  293  yum update
+  294  yum install kmod
+  295  yum install kmod-r8822be
+  296  ping boo.ms
+  297  ping http://www.boo.ms
+  298  ping 8.8.8.8
+  299  ping http://www.boo.ms
+  300  cd Desktop/
+  301  ls
+  302  mkdir /Cloud Native
+  303  ls
+  304  rm Native/
+  305  rmdir  Native/
+  306  ls
+  307  mv /Cloud/ /Cloud_Native
+  308  cd /
+  309  ls
+  310  cd Cloud_Native/
+  311  ls
+  312  git clone https://github.com/udacity/nd064_course_1.git
+  313  ls
+  314  cd nd064_course_1/
+  315  ls
+  316  cd exercises/
+  317  ls
+  318  cd python-helloworld/
+  319  ls
+  320  python3 app.py 
+  321  flask
+  322  flask run app.py 
+  323  python3 app.py 
+  324  gedit app.py 
+  325  python3 app.py 
+  326  gedit app.py 
+  327  ls
+  328  vim app.py 
+  329  pip install flask
+  330  pip3 install flask
+  331  flask
+  332  flask run app.py 
+  333  python3 app.py 
+  334  vim app.py 
+  335  python3 app.py 
+  336  python2 app.py 
+  337  python
+  338  python3 app.py 
+  339  python2 app.py 
+  340  python3 app.py 
+  341  ls
+  342  cat app.log 
+  343  cd /
+  344  ls
+  345  cd root/
+  346  ls
+  347  cd Cloud/
+  348  lsd
+  349  ls
+  350  ls  | grep go
+  351  rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.5.linux-amd64.tar.gz
+  352  ls
+  353  cd /usr/local/
+  354  ls
+  355  cd go/
+  356  ls
+  357  export PATH=$PATH:/usr/local/go/bin
+  358  go version
+  359  cd
+  360  go version
+  361  docker ps
+  362  docker stop edee39dbd7ef
+  363  docker ps
+  364  cd
+  365  cd /Cloud_Native/
+  366  ls
+  367  mkdir Learning
+  368  cd Learning/
+  369  lll
+  370  ll
+  371  vim k3s_command.txt
+  372  cd ..
+  373  ls
+  374  cd nd064_course_1/
+  375  ls
+  376  cd exercises/
+  377  ls
+  378  cd go-helloworld/
+  379  ls
+  380  vim Dockerfile 
+  381  docker build go-helloworld. 
+  382  docker build go-helloworld .  
+  383  docker build -t go-helloworld .  
+  384  docker images
+  385  docker run go-helloworld:latest 
+  386  docker run -p 6112:6112 go-helloworld:latest 
+  387  docker run -d -p 6112:6112 go-helloworld:latest 
+  388  curl localhost:6112
+  389  docker ps
+  390  docker stop 1cf521a03bdd bc47fa22494e
+  391  docker ps
+  392  docker image rm go-helloworld:latest 
+  393  docker docker delete 1cf521a03bdd
+  394  docker image rmf go-helloworld:latest 
+  395  docker ps
+  396  docker ps -a
+  397  docker rm 1cf521a03bdd
+  398  docker ps -a
+  399  docker ps 1f07bbf953e0
+  400  docker rm  1f07bbf953e0 c514d44faa88
+  401  docker ps 1f07bbf953e0
+  402  docker ps -a
+  403  docker image rmf go-helloworld:latest 
+  404  docker image rm go-helloworld:latest 
+  405  docker images
+  406  ls
+  407  vim Dockerfile 
+  408  vim main.go 
+  409  docker build -t sujal56/go-application:v2.0.0
+  410  docker build -t sujal56/go-application:v2.0.0 .
+  411  docker run -d -p 6111:6111 sujal56/go-application:v2.0.0
+  412  docker images
+  413  docker tag sujal56/go-application:v2.0.0 sujal56/go-hrlloworld:v2.0.0
+  414  docker images
+  415  docker tag sujal56/go-application:v2.0.0 sujal56/go-helloworld:v2.0.0
+  416  docker images
+  417  docker image rm sujal56/go-application sujal56/go-hrlloworld
+  418  docker image rm sujal56/go-application:v2.0.0 sujal56/go-hrlloworld:v2.0.0 
+  419  dockerimages
+  420  docker images 
+  421  docker push sujal56/go-helloworld:v2.0.0 
+  422  ls
+  423  vim Dockerfile 
+  424  vim main.go 
+  425  docker build -t sujal56/go-helloworld:v3.0.0 .
+  426  docker images
+  427  docker run go-helloworld --image sujal56/go-helloworld
+  428  docker run go-helloworld --image sujal56/go-helloworld:v3.0.0
+  429  docker run go-helloworld --image sujal56/go-helloworld
+  430  docker run go-helloworld --image sujal56/go-helloworld:v3.0.0
+  431  docker run go-helloworld --image test
+  432  docker tag sujal56/go-helloworld:v3.0.0 test
+  433  docker images
+  434  docker run -d -p 6111
+  435  docker run -d -p 6111:6111 sujal56/go-helloworld:v3.0.0 
+  436  docker push sujal56/go-helloworld:v3.0.0 
+  437  docker ps
+  438  docker stop fe5fbd48361e
+  439  docker ps
+  440  docker ps
+  441  docker stop b5b912dab881
+  442  docker ps
+  443  docker stop 270d400770f4
+  444  docker images
+  445  docker ps
+  446  cd /var/lib/docker/
+  447  ls
+  448  cd image/
+  449  ls
+  450  cd overlay2/
+  451  ls
+  452  cat repositories.json 
+  453  cd imagedb/
+  454  ls
+  455  cd metadata/
+  456  ls
+  457  cd sha256/
+  458  ls
+  459                virtualbox
+  460  cd /Cloud_Native/
+  461  ls
+  462  cd nd064_course_1/
+  463  ls
+  464  cd project/
+  465  ls
+  466  cd kubernetes/
+  467  ls
+  468  cd ../../
+  469  ls
+  470  cd exercises/
+  471  ls
+  472  cat Vagrantfile 
+  473  ls
+  474  cd go-helloworld/
+  475  ls
+  476  cat main.go 
+  477  cd ../../../
+  478  ls
+  479  cd nd064_course_1/
+  480  ls
+  481  cd exercises/
+  482  ls
+  483  cd python-helloworld/
+  484  ls
+  485  vim app.py 
+  486  ls
+  487  vim requirements.txt 
+  488  ls
+  489  systemctl status docker
+  490  ls
+  491  vim Dockerfile
+  492  docker login
+  493  vim Dockerfile
+  494  docker build -t python-helloworld . 
+  495  docker images
+  496  docker run -it -p 8000:5000 python-helloworld 
+  497  docker ps
+  498  docker run -d -p 8000:5000 python-helloworld 
+  499  docker ps
+  500  docker images
+  501  docker tag python-helloworld:latest sujal56/python-flask-helloworld:v1.0.0
+  502  docker images
+  503  docker push sujal56/python-flask-helloworld
+  504  docker push sujal56/python-flask-helloworld:v1.0.0 
+  505  docker ps
+  506  vim Dockerfile
+  507  docker ps
+  508  docker stop 9439b18b362b
+  509  docker logs 9439b18b362b
+  510  cd /Cloud_Native/
+  511  ls
+  512  cd nd064_course_1/
+  513  ls
+  514  cd exercises/
+  515  ls
+  516  cd go-helloworld/
+  517  ls
+  518  cat main.go 
+  519  vim main.go 
+  520  ls
+  521  vim README.md 
+  522  go
+  523  ls
+  524  go run main.go 
+  525  go version
+  526  echo $PATH
+  527  cd /usr/local/go/bin/
+  528  ls
+  529  pwd
+  530  echo $PATH
+  531  export PATH=$PATH:/usr/local/go/bin
+  532  CD
+  533  cd
+  534  go version
+  535  source $HOME/.profile
+  536  cd /Cloud_Native/
+  537  cd nd064_course_1/
+  538  ls
+  539  cd exercises/
+  540  ls
+  541  cd go-helloworld/
+  542  ls
+  543  go run main.go 
+  544  vim Dockerfile
+  545  cat main.go 
+  546  vim Dockerfile 
+  547  docker build -t go-helloworld .
+  548  ls
+  549  go build -o hello-world
+  550  go mod init
+  551  go init
+  552  go build
+  553  ls
+  554  go run main.go 
+  555  go build -o hello-world
+  556  go mod init example.com/hello
+  557  ls
+  558  go build -o helloworld
+  559  ls
+  560  ./helloworld 
+  561  vim Dockerfile 
+  562  docker build -t go-helloworld .
+  563  vim Dockerfile 
+  564  docker build -t go-helloworld .
+  565  docker images
+  566  docker run -d -p 6111:6111 go-helloworld
+  567  docker ps
+  568  docker stop28271
+  569  docker stop 28271
+  570  docker run -d -p 6111:6111 --name go-sujal go-helloworld
+  571  docker tag go-helloworld:latest sujal56/go-helloworld:v1.0.0
+  572  docker ps
+  573  docker images
+  574  docker push sujal56/go-helloworld
+  575  docker push sujal56/go-helloworld:v1.0.0 
+  576  docker images
+  577  docker image rm sujal56/go-helloworld:v1.0.0  sujal56/python-flask-helloworld:v1.0.0 
+  578  docker images
+  579  docker tag python-helloworld:latest sujal56/python-helloworld:v1.0.0
+  580  docker push sujal56/python-helloworld:v1.0.0 
+  581  docker image rm sujal56/python-helloworld:v1.0.0 
+  582  docker images
+  583  docker run sujal56/python-helloworld:v1.0.0
+  584  docker run -d -p 5000:5000 sujal56/python-helloworld:v1.0.0 
+  585  docker run -d -p 6111:6111 sujal56/go-helloworld:v1.0.0
+  586  cd ..
+  587  ..
+  588  cd ..
+  589  ls
+  590  cd exercises/
+  591  ls
+  592  cat Vagrantfile 
+  593  vagrant up
+  594  vagrant ssh
+  595  vagrant up
+  596  vagrant start
+  597  ls
+  598  vagrant resume
+  599  vagrant up
+  600  vagrant ssh
+  601  kubectl get ccm
+  602  vagrant ssh
+  603  kubectl get nodes
+  604  kubectl create cm test-cm --form-literal=color=blue
+  605  kubectl create configmap test-cm --form-literal=color=blue
+  606  kubectl create configmap test-cm --from-literal=color=blue
+  607  kubectl get cm
+  608  kubectl describe cm test-sm
+  609  kubectl describe cm test-cm
+  610  kubectl create secrets test-secrets --from-literal=color=red
+  611  kubectl create secret generic test-secrets --from-literal=color=red
+  612  kubectl get secret
+  613  kubectl describe secret test-secrets
+  614  kubectl get secret test-secrets -o yaml
+  615  echo "cmVk" | base64 -D
+  616  echo "cmVk" | base64 -d
+  617  history > cmd.txt
+  618  ls
+  619  mv cmd.txt ../
+  620  ls
+  621  cd ../
+  622  ls
+  623  cat cmd.txt 
+  624  kubectl get ns
+  625  kubectl create ns test-udacity
+  626  kubectl get ns
+  627  kubectl run busybox --image busybox -n test-udacity
+  628  kubectl get pods
+  629  kubectl get pods -o wide
+  630  kubectl get po -n test-udacity
+  631  kubectl get ns
+  632  kubectl create ns demo 
+  633  kubectl get ns
+  634  kubectl label ns demo tier=test
+  635  kubectl get ns
+  636  kubectl descibe ns 
+  637  kubectl describe ns 
+  638  kubectl describe ns demo
+  639  kubectl create deployment nginx-alpine --image nginx:alpine -r 3 -n demo 
+  640  kubectl label deploy nginx-alpine app: nginx , tag: alpine
+  641  kubectl label deploy nginx-alpine app: nginx tag: alpine
+  642  kubectl label deploy nginx-alpine app: nginx
+  643  kubectl label deploy nginx-alpine app=nginx , tag=alpine
+  644  kubectl label deploy nginx-alpine app=nginx  tag=alpine
+  645  kubectl get deploy
+  646  kubectl label deploy nginx-alpine app=nginx  tag=alpine -n demo
+  647  kubectl label deploy nginx-alpine  tag=alpine -n demo
+  648  kubectl get deploy -n demo
+  649  kubectl describe nginx-alpine -n demo
+  650  kubectl describe deploy nginx-alpine -n demo
+  651  kubectl label deploy nginx-alpine  tag=alpine -n demo
+  652  kubectl get pods
+  653  kubectl get deploy -n demo
+  654  kubectl expose deploy nginx-alpine --port=8111 -n demo
+  655  kubectl get svc -n demo
+  656  kubectl create configmap nginx-version --from-literal=version=alpine -n demo
+  657  kubectl get cm -n demo
+  658  kubectl descibe cm nginx-version -n demo
+  659  kubectl describe cm nginx-version -n demo
+  660  kubectl get pods -n demo
+  661  curl localhost:8111
+  662  curl localhost:80
+  663  history > ../ex1.txt

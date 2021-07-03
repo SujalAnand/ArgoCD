@@ -1,0 +1,8 @@
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [26/Jun/2021 03:03:31] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Jun/2021 03:04:00] "GET /status HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [26/Jun/2021 03:04:26] "GET /status HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Jun/2021 03:04:33] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Jun/2021 03:12:44] "GET /metrics HTTP/1.1" 200 -
